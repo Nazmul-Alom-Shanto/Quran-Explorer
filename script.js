@@ -1,4 +1,4 @@
-const baseURL = "http://api.alquran.cloud/v1/ayah/";
+const baseURL = "https://api.alquran.cloud/v1/ayah/";
 const ayahs_in_surahs = [
     7, 286, 200, 176, 120, 165, 206, 75, 129, 109, 123, 111,
     43, 52, 99, 128, 111, 110, 98, 135, 112, 78, 118, 64,
