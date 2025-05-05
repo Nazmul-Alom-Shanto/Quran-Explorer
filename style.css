@@ -166,13 +166,146 @@ body {
     width: 40vw;
     height: 2.8rem;
     position: absolute;
+    cursor: pointer;
     right: 6vh;
     top: 2vh;
     border-radius: 20px;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
-    gap: 10px}
+    gap: 0;
+
+}
+.search .input {
+    width: calc(40vw - 45px);
+}
+
+option {
+    padding-left: 10px;
+    margin-left: 10px;
+    text-align: center;
+}
+
+.search .input   select {
+       
+        appearance: none;
+        width: calc(40vw - 45px);
+        height: 2.8rem;
+        font-size: 16px;
+        border: none;
+        outline: none;
+        border-radius: 20px 0 0 20px;
+        background: inherit;
+        color: #fff;
+        
+      }
+
+    .search .input select option {
+        padding-left: 10px!important;
+      }
+      
+      .search .input  select:focus {
+        background: #e0e1e2;
+        border: none;
+        color: #000;
+        
+        
+      }
+      .search .input select .first-option {
+        text-align: start;
+        padding-left: 20px;
+        
+      }
+    
+      .search .input select .sura-select {
+        color: #fff;
+
+      }
+      .search .input input {
+        width: calc(40vw - 45px);
+        height: 2.8rem;
+        font-size: 16px;
+        border: none;
+        outline: none;
+        border-radius: 20px 0 0 20px;
+        background: inherit;
+        color: #fff;
+        padding-left: 20px;
+      }
+      .search .input input::placeholder {
+        color: #fff;
+        
+        font-size: 1rem;
+      }
+      .search .action {
+        width: 45px;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #e0e1e2;
+        border-radius: 0 20px 20px 0;
+      }
+
+
+
+    .search .action i {
+        font-size: 28px;
+        color: #10253c;
+        cursor: pointer;
+        width: max-content;
+        height: max-content;
+        
+        justify-self: flex-end;
+    }
+    input[type="number"]::-webkit-outer-spin-button,
+    input[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+   
+/*
+
+ .search-option {
+        background: #e0e1e2;
+        z-index: 100;
+        width: 42vw;
+        height: auto;
+        top: 2vh; 
+        position: absolute;
+        
+        right: 5vw;
+        border-radius: 4px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 10px;
+        list-style: none;
+        
+        flex-direction: column;
+        padding: 10px;
+        
+}
+    .search-option li {
+        text-align: center;
+        background: #fcfbf9;
+        border-radius: 10px;
+        width: 90%;
+        color: #3e607c;
+        font-weight: 600;
+        font-size: 1rem;
+        padding: 10px 10px;
+        outline: none;
+        padding-left: 15px;
+        cursor: pointer;
+
+    }
+        
+    .search-option li:hover {
+        background: #3e607c;
+        color: #ebf9ff;
+    }
+
 
     .search input {
         
@@ -187,21 +320,27 @@ body {
         outline: none;
         padding-left: 30px;
     }
-    .search input::placeholder{
+    .search h1{
         color: #ebf9ff;
         font-size: 1.2rem;
+        position: relative;
+        left : 20px;
         font-weight: 400;
         outline: none;
     }
-    .search i {
+  .sura-select {
         position: absolute;
-        right: 5px;
-        color: #dac980;
-        cursor: pointer;
-        padding: auto 10px;
-        width: 40px;
-        justify-self: flex-end;
+        top: 10vh;
+        left: 6vh;
+        z-index: 1000;
+    }
+    .sura-select > * {
+        z-index: 1000;
     }
 
-    
-    
+   
+*/
+
+    /* test*/
+
+  

@@ -12,7 +12,123 @@ const ayahs_in_surahs = [
     6, 3, 5, 4, 5, 6
 ];
 
-
+const surahNames = [
+    "Al-Fatiha",
+    "Al-Baqarah",
+    "Al-Imran",
+    "An-Nisa",
+    "Al-Ma'idah",
+    "Al-An'am",
+    "Al-A'raf",
+    "Al-Anfal",
+    "At-Tawbah",
+    "Yunus",
+    "Hud",
+    "Yusuf",
+    "Ar-Ra'd",
+    "Ibrahim",
+    "Al-Hijr",
+    "An-Nahl",
+    "Al-Isra",
+    "Al-Kahf",
+    "Maryam",
+    "Ta-Ha",
+    "Al-Anbiya",
+    "Al-Hajj",
+    "Al-Mu'minun",
+    "An-Nur",
+    "Al-Furqan",
+    "Ash-Shu'ara",
+    "An-Naml",
+    "Al-Qasas",
+    "Al-Ankabut",
+    "Ar-Rum",
+    "Luqman",
+    "As-Sajda",
+    "Al-Ahzab",
+    "Saba",
+    "Fatir",
+    "Ya-Sin",
+    "As-Saffat",
+    "Sad",
+    "Az-Zumar",
+    "Ghafir",
+    "Fussilat",
+    "Ash-Shura",
+    "Az-Zukhruf",
+    "Ad-Dukhan",
+    "Al-Jathiyah",
+    "Al-Ahqaf",
+    "Muhammad",
+    "Al-Fath",
+    "Al-Hujurat",
+    "Qaf",
+    "Adh-Dhariyat",
+    "At-Tur",
+    "An-Najm",
+    "Al-Qamar",
+    "Ar-Rahman",
+    "Al-Waqi'ah",
+    "Al-Hadid",
+    "Al-Mujadila",
+    "Al-Hashr",
+    "Al-Mumtahanah",
+    "As-Saff",
+    "Al-Jumu'ah",
+    "Al-Munafiqun",
+    "At-Taghabun",
+    "At-Talaq",
+    "At-Tahrim",
+    "Al-Mulk",
+    "Al-Qalam",
+    "Al-Haqqah",
+    "Al-Ma'arij",
+    "Nuh",
+    "Al-Jinn",
+    "Al-Muzzammil",
+    "Al-Muddathir",
+    "Al-Qiyamah",
+    "Al-Insan",
+    "Al-Mursalat",
+    "An-Naba",
+    "An-Nazi'at",
+    "Abasa",
+    "At-Takwir",
+    "Al-Infitar",
+    "Al-Mutaffifin",
+    "Al-Inshiqaq",
+    "Al-Buruj",
+    "At-Tariq",
+    "Al-A'la",
+    "Al-Ghashiyah",
+    "Al-Fajr",
+    "Al-Balad",
+    "Ash-Shams",
+    "Al-Layl",
+    "Ad-Duhaa",
+    "Ash-Sharh",
+    "At-Tin",
+    "Al-Alaq",
+    "Al-Qadr",
+    "Al-Bayyinah",
+    "Az-Zalzalah",
+    "Al-Adiyat",
+    "Al-Qari'ah",
+    "At-Takathur",
+    "Al-Asr",
+    "Al-Humazah",
+    "Al-Fil",
+    "Quraysh",
+    "Al-Ma'un",
+    "Al-Kawthar",
+    "Al-Kafirun",
+    "An-Nasr",
+    "Al-Masad",
+    "Al-Ikhlas",
+    "Al-Falaq",
+    "An-Nas"
+  ];
+  
 
 let surahNumber = 2;
 let ayahNumber = 255;
@@ -20,6 +136,7 @@ let audioURL = null;
 let audio = null;
 let wasPlaying = false;
 let isClicked = false;
+let currSearchMode = "UsingAyahAndSurahNo";
 
 
 const AyahArabic = document.getElementById("ayah-arabic");
@@ -27,13 +144,117 @@ const AyahNo = document.getElementById("ayah-no");
 const AyahBangla = document.getElementById("ayah-bangla");
 const AyahEnglish = document.getElementById("ayah-english");
 const SearchBar = document.getElementById("search-bar");
+const SelectSurah = document.getElementById("surah-input-select");
+const SearchActionIcon = document.getElementById("search-action-icon");
+const SearchInput = document.getElementById("search-input");
 
 
 const PlayPauseBTN = document.getElementById("btn-play-pause");
 const LeftBTN = document.getElementById("btn-left");
 const RightBTN = document.getElementById("btn-right");
-const SearchBTN = document.getElementById("btn-search");
+const UsingSurahName = document.getElementById("UsingSurahName");
+const UsingAyahAndSurahNo = document.getElementById("UsingAyahAndSurahNo");
 
+const SearchAction = document.getElementById("search-action");
+
+
+function ResetSearch() {
+    SearchBar.innerHTML = "";
+    const SearchInput = document.createElement("div");
+    SearchInput.id = "search-input";
+    SearchInput.className = "input";
+    
+    const select = document.createElement("select");
+    select.id = "surah-input-select";
+    const option = document.createElement("option");
+    option.value = "-1";
+    option.innerHTML = " &nbsp; &nbsp; Search";
+    option.className = "first-option";
+    select.appendChild(option);
+    surahNames.forEach((name, index) => {
+        const option = document.createElement("option");
+        option.value = index + 1; // Surah number    
+        option.textContent = `  ${index + 1}. ${name}`;
+        select.appendChild(option);
+    })
+    SearchInput.appendChild(select);
+
+
+
+    const SearchAction = document.createElement("div");
+    SearchAction.className = "action";
+    SearchAction.id = "search-action";
+    
+    const icon = document.createElement("i");
+    icon.className = "material-icons";
+    icon.id = "search-action-icon";
+    icon.innerText = "search";
+    SearchAction.appendChild(icon);
+    SearchAction.id = "search-action";
+    SearchBar.appendChild(SearchInput);
+    SearchBar.appendChild(SearchAction);
+
+
+
+    const SelectSurah = document.getElementById("surah-input-select");
+    const SearchActionIcon = document.getElementById("search-action-icon");
+
+    SelectSurah.addEventListener("focus",()=>{
+        SearchActionIcon.innerText = "arrow_forward"
+        SearchAction.id = "to-ayah-no";
+        const ToAyahNo = document.getElementById("to-ayah-no");
+        ToAyahNo.addEventListener("click",() => {
+            console.log("ToAyahNo Clicked");
+            SearchActionIcon.innerText = "search"
+            SearchInput.innerHTML = "";
+            const input = document.createElement("input");
+            input.type = "number";
+            input.placeholder = "Ayah Number";
+            input.min = 1;
+            input.max = ayahs_in_surahs[surahNumber-1];
+            SearchInput.appendChild(input);
+            SearchAction.id = "search";
+            const SearchBTN = document.getElementById("search");
+            SearchBTN.addEventListener("click",()=>{
+                if(Number(input.value) > ayahs_in_surahs[surahNumber-1] || Number(input.value) < 1){
+                    alert("Invalid ayah number");
+                    return;
+                }
+                ayahNumber = Number(input.value);
+                console.log("SearchBTN Clicked");
+                console.log(`${surahNumber}:${ayahNumber}`);
+                try {
+                    UpdateAyah(wasPlaying);
+                } catch (error) {
+                    alert("can't Update Ayah",error);
+                }
+                ResetSearch();
+            })
+        },{once:true});
+        
+    })
+    
+    
+    SelectSurah.addEventListener("change",()=>{
+        console.log("SelectSurah changed, the value is ",SelectSurah.value);
+        
+        if(Number(SelectSurah.value) > 0){
+            surahNumber = Number(SelectSurah.value);
+        }
+    })
+    
+    
+
+}
+/*
+surahNames.forEach((name, index) => {
+    const option = document.createElement("option");
+    option.value = index + 1; // Surah number
+    option.textContent = `  ${index + 1}. ${name}`;
+    SelectSurah.appendChild(option);
+  });
+*/
+ResetSearch();
 
 
 
@@ -87,6 +308,13 @@ async function UpdateAyah(isSpecial = false) {
         }
 
     } catch (error){
+        const ab = {"TypeError" : "Failed to fetch"};
+        if(error === ab){
+            console.log("in the if");
+            AyahArabic.innerHTML = "No Internet";
+            AyahBangla.innerHTML ="";
+            AyahEnglish.innerHTML ="";
+        }
         console.warn("Error Updating Ayah",error);
     }
 }
@@ -164,6 +392,7 @@ RightBTN.addEventListener("click",() => {
     GoForward();
 })
 
+/*
 SearchBTN.addEventListener("click",()=> {
     const [surah,ayah] = SearchBar.value.split(":");
     if(surah > 114 || surah < 1){
@@ -180,6 +409,7 @@ SearchBTN.addEventListener("click",()=> {
 })
 
 
+*/
 
 PlayPauseBTN.addEventListener("click",() => {
     togglePlayPause();
@@ -205,7 +435,10 @@ PlayPauseBTN.addEventListener("click",() => {
 })
 
 
+/*UsingSurahName.addEventListener("click",()=> {
 
+})
+*/
 UpdateAyah();
 
 document.addEventListener("keydown", (e) => {
