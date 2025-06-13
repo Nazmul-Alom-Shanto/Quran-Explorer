@@ -7,6 +7,9 @@ Welcome to **Quran Explorer** — a web application designed to deepen understan
 As a **Hafez of the Quran**, I created this tool to apply what I’ve memorized and to truly understand the meaning behind each verse. This project is a step toward making it a daily habit to explore and reflect on the meanings of the Quran.
 
 ---
+> **Quran Explorer**
+>![Quran Explorer Screenshot](Screenshot.png)
+
 
 ## 🌟 Key Features
 
@@ -14,8 +17,8 @@ As a **Hafez of the Quran**, I created this tool to apply what I’ve memorized 
 Designed to support daily engagement with Quranic verses. Ideal for anyone who wants to better understand what they’ve memorized or read.
 
 ### 🔍 Powerful Search Function
-Quickly find any verse using the `{SurahNo}:{AyahNo}` format.  
-**Example**: To find Ayah 255 from Surah 2 (Al-Baqarah), simply search `2:255`.
+Quickly find any verse using the Surah Name & Ayah Number.  
+**Example**: To find Ayah 255 from Surah 2 (Al-Baqarah), 1st select Al-Baqarah from search dropdown then add the ayah number.
 
 ### 🔊 Audio Playback
 Listen to the recitation of each verse to enhance memorization and pronunciation.
