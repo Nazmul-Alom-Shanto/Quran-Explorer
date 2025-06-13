@@ -17,8 +17,15 @@ As a **Hafez of the Quran**, I created this tool to apply what I’ve memorized 
 Designed to support daily engagement with Quranic verses. Ideal for anyone who wants to better understand what they’ve memorized or read.
 
 ### 🔍 Powerful Search Function
-Quickly find any verse using the Surah Name & Ayah Number.  
-**Example**: To find Ayah 255 from Surah 2 (Al-Baqarah), 1st select Al-Baqarah from search dropdown then add the ayah number.
+
+Easily locate any verse using the **Surah name** and **Ayah number**.
+
+**How to use:**
+1. Select a Surah from the dropdown menu (e.g., *Al-Baqarah*).
+2. Enter the Ayah number (e.g., `255`).
+
+✅ Example: To find Ayah **255** from Surah **2 (Al-Baqarah)**, simply select *Al-Baqarah* and enter `255`.
+
 
 ### 🔊 Audio Playback
 
