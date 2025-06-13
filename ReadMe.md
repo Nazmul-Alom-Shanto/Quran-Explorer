@@ -21,7 +21,9 @@ Quickly find any verse using the Surah Name & Ayah Number.
 **Example**: To find Ayah 255 from Surah 2 (Al-Baqarah), 1st select Al-Baqarah from search dropdown then add the ayah number.
 
 ### 🔊 Audio Playback
-Listen to the recitation of each verse to enhance memorization and pronunciation.
+
+Enhance your memorization and pronunciation with clear, high-quality recitation by **Qari Sheikh Mishary Rashid Alafasy**, available for every verse.
+
 
 ### 🎨 Clean, User-Friendly Design
 The interface is simple and focused — helping you stay immersed in the message.  
@@ -31,7 +33,7 @@ The interface is simple and focused — helping you stay immersed in the message
 
 ## 🚀 Development Info
 
-- **Build Time:** 1 day  
+- **Build Time:** 2 day  
 - **Live Demo:** [Quran Explorer](https://nazmul-alom-shanto.github.io/Quran-Explorer/)  
 - **Technologies Used:** HTML, CSS, JavaScript
 
