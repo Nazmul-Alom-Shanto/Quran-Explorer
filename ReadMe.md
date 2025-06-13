@@ -38,7 +38,11 @@ The interface is simple and focused — helping you stay immersed in the message
 - **Technologies Used:** HTML, CSS, JavaScript
 
 ---
+## License
 
+This project is licensed under the [MIT License](./LICENSE).
+
+---
 ## 🤲 Why I Built This
 
 Understanding the Quran is just as important as memorizing it. I hope this tool helps others — especially fellow Huffaz — reflect on the verses they recite and carry in their hearts.
