@@ -1,4 +1,5 @@
 const baseURL = "https://api.alquran.cloud/v1/ayah/";
+const tafseerURL = "https://cdn.jsdelivr.net/gh/spa5k/tafsir_api@main/tafsir/";
 const ayahs_in_surahs = [
     7, 286, 200, 176, 120, 165, 206, 75, 129, 109, 123, 111,
     43, 52, 99, 128, 111, 110, 98, 135, 112, 78, 118, 64,
@@ -129,6 +130,8 @@ const surahNames = [
     "An-Nas"
   ];
   
+const tafsirBnSlug = 'bn-tafseer-ibn-e-kaseer';
+const tafsirEnSlug = 'en-al-jalalayn'; 
 
 let surahNumber = 2;
 let ayahNumber = 255;
@@ -148,6 +151,8 @@ const SelectSurah = document.getElementById("surah-input-select");
 const SearchActionIcon = document.getElementById("search-action-icon");
 const SearchInput = document.getElementById("search-input");
 
+const tafsirBn = document.getElementById("tafsir-bn");
+const tafsirEn = document.getElementById("tafsir-en");
 
 const PlayPauseBTN = document.getElementById("btn-play-pause");
 const LeftBTN = document.getElementById("btn-left");
@@ -294,6 +299,14 @@ async function UpdateAyah(isSpecial = false) {
         const responceEnglish = await fetch(baseURL + surahNumber + ":" + ayahNumber + "/en.asad");
         const dataEnglish = await responceEnglish.json();
         AyahEnglish.innerText = dataEnglish.data.text;
+
+        const responceBanglaTafsir = await fetch(`${tafseerURL}${tafsirBnSlug}/${surahNumber}/${ayahNumber}.json`);
+        const dataTafsir = await responceBanglaTafsir.json();
+        tafsirBn.innerText = dataTafsir.text;
+
+        const responceEnglishTafsir = await fetch(`${tafseerURL}${tafsirEnSlug}/${surahNumber}/${ayahNumber}.json`);
+        const dataEnglishTafsir = await responceEnglishTafsir.json();
+        tafsirEn.innerText = dataEnglishTafsir.text;
 
 
         if(wasPlaying){
